@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace IRF_Project
 {
-    public partial class Form1 : Form
+    public partial class LoginUserControl : UserControl
     {
-        public Form1()
+        public LoginUserControl()
         {
             InitializeComponent();
-            LoginUserControl loginUserControl = new LoginUserControl();
-            mainPanel.Controls.Add(loginUserControl);
-            loginUserControl.Dock = DockStyle.Fill;
         }
     }
 }
