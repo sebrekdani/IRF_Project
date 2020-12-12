@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.playerDataGridView = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.postsComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // playerDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(506, 262);
-            this.dataGridView1.TabIndex = 0;
+            this.playerDataGridView.AllowUserToAddRows = false;
+            this.playerDataGridView.AllowUserToDeleteRows = false;
+            this.playerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.playerDataGridView.Location = new System.Drawing.Point(3, 46);
+            this.playerDataGridView.Name = "playerDataGridView";
+            this.playerDataGridView.ReadOnly = true;
+            this.playerDataGridView.Size = new System.Drawing.Size(506, 262);
+            this.playerDataGridView.TabIndex = 0;
             // 
             // button1
             // 
@@ -79,10 +79,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.postsComboBox);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.playerDataGridView);
             this.Name = "TableUserControl";
             this.Size = new System.Drawing.Size(509, 376);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,7 +90,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView playerDataGridView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox postsComboBox;
         private System.Windows.Forms.Label label1;
