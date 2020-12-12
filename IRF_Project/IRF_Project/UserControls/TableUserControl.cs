@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace IRF_Project.UserControls
 {
@@ -28,7 +29,17 @@ namespace IRF_Project.UserControls
         {
             var postDistinct = (from x in postList
                                select x).Distinct();
-            postsComboBox.DataSource = postDistinct;
+            postList.Clear();
+            foreach (var item in postDistinct)
+            {
+                postList.Add(item);
+            }
+            postsComboBox.DataSource = postList;
+        }
+
+        private void exportButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

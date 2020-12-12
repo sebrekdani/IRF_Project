@@ -39,9 +39,9 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(24, 116);
+            this.mainPanel.Location = new System.Drawing.Point(24, 70);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(734, 287);
+            this.mainPanel.Size = new System.Drawing.Size(734, 333);
             this.mainPanel.TabIndex = 0;
             // 
             // label1
@@ -95,6 +95,7 @@
             this.resetButton.TabIndex = 6;
             this.resetButton.Text = "button2";
             this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // Form1
             // 

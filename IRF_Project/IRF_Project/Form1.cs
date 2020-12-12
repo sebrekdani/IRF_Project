@@ -19,7 +19,7 @@ namespace IRF_Project
         public Form1()
         {
             InitializeComponent();
-            //CreatePlayers();
+            CreatePlayers();
         }
 
         private void CreatePlayers()
@@ -47,12 +47,28 @@ namespace IRF_Project
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                LoginController loginController = new LoginController();
+                loginController.Controller(emailTextBox.Text, passwordTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             if (emailTextBox.Text=="manager@footballclub.com" && passwordTextBox.Text=="a")
             {
                 TableUserControl tableUserControl = new TableUserControl(players, postList);
                 mainPanel.Controls.Add(tableUserControl);
                 tableUserControl.Dock = DockStyle.Fill;
             }
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            emailTextBox.Clear();
+            passwordTextBox.Clear();
         }
     }
 }

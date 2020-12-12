@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,6 +10,11 @@ namespace IRF_Project
 {
     public class LoginController
     {
+        public void Controller(string email,string password)
+        {
+            if (!ValidateEmail(email)) throw new ValidationException("A megadott e-mail cím nem megfelelő!");
+            if (!ValidatePassword(password)) throw new ValidationException("A megadott jelszó nem megfelelő!");
+        }
         public bool ValidateEmail(string email)
         {
             return Regex.IsMatch(

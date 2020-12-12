@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.playerDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.exportButton = new System.Windows.Forms.Button();
             this.postsComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).BeginInit();
@@ -43,17 +43,18 @@
             this.playerDataGridView.Location = new System.Drawing.Point(3, 46);
             this.playerDataGridView.Name = "playerDataGridView";
             this.playerDataGridView.ReadOnly = true;
-            this.playerDataGridView.Size = new System.Drawing.Size(506, 262);
+            this.playerDataGridView.Size = new System.Drawing.Size(506, 327);
             this.playerDataGridView.TabIndex = 0;
             // 
-            // button1
+            // exportButton
             // 
-            this.button1.Location = new System.Drawing.Point(330, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.exportButton.Location = new System.Drawing.Point(418, 14);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(75, 23);
+            this.exportButton.TabIndex = 1;
+            this.exportButton.Text = "button1";
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // postsComboBox
             // 
@@ -78,7 +79,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.postsComboBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.exportButton);
             this.Controls.Add(this.playerDataGridView);
             this.Name = "TableUserControl";
             this.Size = new System.Drawing.Size(509, 376);
@@ -91,7 +92,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView playerDataGridView;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.ComboBox postsComboBox;
         private System.Windows.Forms.Label label1;
     }
