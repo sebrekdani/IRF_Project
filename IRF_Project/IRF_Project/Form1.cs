@@ -15,16 +15,11 @@ namespace IRF_Project
     {
         TeamEntities context = new TeamEntities();
         List<Player> players = new List<Player>();
+        List<string> postList = new List<string>();
         public Form1()
         {
             InitializeComponent();
-            CreatePlayers();
-            if (true /*ha sikeres a bejelentkezés*/)
-            {
-                TableUserControl tableUserControl = new TableUserControl(players);
-                mainPanel.Controls.Add(tableUserControl);
-                tableUserControl.Dock = DockStyle.Fill;
-            }
+            //CreatePlayers();
         }
 
         private void CreatePlayers()
@@ -39,6 +34,7 @@ namespace IRF_Project
                 player.Month = (Months)Enum.Parse(typeof(Months), item.Month.ToString());
                 player.Day = item.Day;
                 player.Post = item.Post;
+                postList.Add(player.Post);
                 player.Goal = item.Goal;
                 player.Assist = item.Assist;
                 player.YellowCard = item.YellowCard;
@@ -46,6 +42,16 @@ namespace IRF_Project
                 player.Injured = item.Injured;
                 player.Average = item.Average;
                 players.Add(player);
+            }
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            if (emailTextBox.Text=="manager@footballclub.com" && passwordTextBox.Text=="a")
+            {
+                TableUserControl tableUserControl = new TableUserControl(players, postList);
+                mainPanel.Controls.Add(tableUserControl);
+                tableUserControl.Dock = DockStyle.Fill;
             }
         }
     }

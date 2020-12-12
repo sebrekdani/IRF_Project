@@ -12,13 +12,17 @@ namespace IRF_Project.UserControls
 {
     public partial class TableUserControl : UserControl
     {
-        public TableUserControl()
+        public TableUserControl(List<Player> players, List<string> postList)
         {
             InitializeComponent();
+            ComboBoxFill(postList);
         }
-        public TableUserControl(List<Player> players)
-        {
 
+        private void ComboBoxFill(List<string> postList)
+        {
+            var postDistinct = (from x in postList
+                               select x).Distinct();
+            postsComboBox.DataSource = postDistinct;
         }
     }
 }
