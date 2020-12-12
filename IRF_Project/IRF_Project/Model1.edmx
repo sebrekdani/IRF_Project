@@ -14,6 +14,7 @@
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="Month" Type="int" Nullable="false" />
           <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="Goal" Type="int" Nullable="false" />
           <Property Name="Assist" Type="int" Nullable="false" />
           <Property Name="YellowCard" Type="int" Nullable="false" />
@@ -38,6 +39,7 @@
           <Property Name="Year" Type="Int32" Nullable="false" />
           <Property Name="Month" Type="Int32" Nullable="false" />
           <Property Name="Day" Type="Int32" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Goal" Type="Int32" Nullable="false" />
           <Property Name="Assist" Type="Int32" Nullable="false" />
           <Property Name="YellowCard" Type="Int32" Nullable="false" />
@@ -46,7 +48,7 @@
           <Property Name="Average" Type="Decimal" Precision="3" Scale="2" Nullable="false" />
         </EntityType>
         <EntityContainer Name="TeamEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <EntitySet Name="Team" EntityType="Self.Team" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -54,7 +56,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="TeamModelStoreContainer" CdmEntityContainer="TeamEntities">
-          <EntitySetMapping Name="Teams">
+          <EntitySetMapping Name="Team">
             <EntityTypeMapping TypeName="TeamModel.Team">
               <MappingFragment StoreEntitySet="Team">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -62,6 +64,7 @@
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Month" ColumnName="Month" />
                 <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
                 <ScalarProperty Name="Goal" ColumnName="Goal" />
                 <ScalarProperty Name="Assist" ColumnName="Assist" />
                 <ScalarProperty Name="YellowCard" ColumnName="YellowCard" />
@@ -85,7 +88,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

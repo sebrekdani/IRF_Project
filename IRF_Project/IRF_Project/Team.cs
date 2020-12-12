@@ -19,6 +19,7 @@ namespace IRF_Project
         public int Year { get; set; }
         public int Month { get; set; }
         public int Day { get; set; }
+        public string Post { get; set; }
         public int Goal { get; set; }
         public int Assist { get; set; }
         public int YellowCard { get; set; }

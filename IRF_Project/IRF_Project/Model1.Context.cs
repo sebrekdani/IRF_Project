@@ -25,6 +25,6 @@ namespace IRF_Project
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Team> Teams { get; set; }
+        public virtual DbSet<Team> Team { get; set; }
     }
 }

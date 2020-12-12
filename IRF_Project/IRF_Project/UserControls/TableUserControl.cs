@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IRF_Project
+namespace IRF_Project.UserControls
 {
-    public partial class LoginUserControl : UserControl
+    public partial class TableUserControl : UserControl
     {
-        public LoginUserControl()
+        public TableUserControl()
         {
             InitializeComponent();
+        }
+        public TableUserControl(List<Player> players)
+        {
+
         }
     }
 }
