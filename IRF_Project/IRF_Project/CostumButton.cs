@@ -12,10 +12,11 @@ namespace IRF_Project
         public CostumButton(string text, int top, int left)
         {
             Width = 100;
-            Height = 20;
+            Height = 30;
             Top = top;
             Left = left;
             Text = text;
+            Font = new System.Drawing.Font(Font.FontFamily, 9);
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableForm));
             this.label1 = new System.Windows.Forms.Label();
             this.postsComboBox = new System.Windows.Forms.ComboBox();
             this.playerDataGridView = new System.Windows.Forms.DataGridView();
@@ -37,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 15);
+            this.label1.Location = new System.Drawing.Point(66, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 7;
@@ -46,7 +47,7 @@
             // postsComboBox
             // 
             this.postsComboBox.FormattingEnabled = true;
-            this.postsComboBox.Location = new System.Drawing.Point(63, 12);
+            this.postsComboBox.Location = new System.Drawing.Point(123, 15);
             this.postsComboBox.Name = "postsComboBox";
             this.postsComboBox.Size = new System.Drawing.Size(121, 21);
             this.postsComboBox.TabIndex = 6;
@@ -59,10 +60,10 @@
             this.playerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.playerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.playerDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.playerDataGridView.Location = new System.Drawing.Point(0, 92);
+            this.playerDataGridView.Location = new System.Drawing.Point(0, 52);
             this.playerDataGridView.Name = "playerDataGridView";
             this.playerDataGridView.ReadOnly = true;
-            this.playerDataGridView.Size = new System.Drawing.Size(800, 358);
+            this.playerDataGridView.Size = new System.Drawing.Size(800, 398);
             this.playerDataGridView.TabIndex = 4;
             // 
             // TableForm
@@ -73,8 +74,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.postsComboBox);
             this.Controls.Add(this.playerDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TableForm";
-            this.Text = "TableForm";
+            this.Text = "Manchester United Squad";
             ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
