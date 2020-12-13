@@ -57,7 +57,7 @@ namespace IRF_Project
 
                 MessageBox.Show(ex.Message);
             }
-            if (emailTextBox.Text=="manager@footballclub.com" && passwordTextBox.Text=="a")
+            if (emailTextBox.Text=="manager@footballclub.com" && passwordTextBox.Text=="ClubManag3r")
             {
                 TableUserControl tableUserControl = new TableUserControl(players, postList);
                 mainPanel.Controls.Add(tableUserControl);
