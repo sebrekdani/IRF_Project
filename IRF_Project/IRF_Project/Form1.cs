@@ -20,6 +20,48 @@ namespace IRF_Project
         {
             InitializeComponent();
             CreatePlayers();
+            CreateButtons();
+        }
+
+        private void CreateButtons()
+        {
+            CostumButton loginBT = new CostumButton("Login", emailTextBox.Top, emailTextBox.Left + emailTextBox.Width + 50);
+            Controls.Add(loginBT);
+            loginBT.Click += LoginBT_Click;
+
+            CostumButton resetBT = new CostumButton("Reset", passwordTextBox.Top, loginBT.Left);
+            Controls.Add(resetBT);
+            resetBT.Click += ResetBT_Click;
+        }
+
+        private void ResetBT_Click(object sender, EventArgs e)
+        {
+            emailTextBox.Clear();
+            passwordTextBox.Clear();
+        }
+
+        private void LoginBT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoginController loginController = new LoginController();
+                loginController.Controller(emailTextBox.Text, passwordTextBox.Text);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            if (emailTextBox.Text == "manager@footballclub.com" && passwordTextBox.Text == "a")
+            {
+                TableUserControl tableUserControl = new TableUserControl(players, postList);
+                mainPanel.Controls.Add(tableUserControl);
+                tableUserControl.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                MessageBox.Show("Az e-mail cím vagy a jelszó nem megfelelő!");
+            }
         }
 
         private void CreatePlayers()
@@ -43,36 +85,6 @@ namespace IRF_Project
                 player.Average = item.Average;
                 players.Add(player);
             }
-        }
-
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LoginController loginController = new LoginController();
-                loginController.Controller(emailTextBox.Text, passwordTextBox.Text);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            if (emailTextBox.Text=="manager@footballclub.com" && passwordTextBox.Text=="a")
-            {
-                TableUserControl tableUserControl = new TableUserControl(players, postList);
-                mainPanel.Controls.Add(tableUserControl);
-                tableUserControl.Dock = DockStyle.Fill;
-            }
-            else
-            {
-                MessageBox.Show("Az e-mail cím vagy a jelszó nem megfelelő!");
-            }
-        }
-
-        private void resetButton_Click(object sender, EventArgs e)
-        {
-            emailTextBox.Clear();
-            passwordTextBox.Clear();
         }
     }
 }
