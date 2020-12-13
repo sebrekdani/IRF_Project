@@ -42,7 +42,7 @@
             // 
             this.mainPanel.Location = new System.Drawing.Point(24, 70);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(734, 333);
+            this.mainPanel.Size = new System.Drawing.Size(1011, 415);
             this.mainPanel.TabIndex = 0;
             // 
             // label1
@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1063, 497);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordTextBox);

@@ -57,11 +57,15 @@ namespace IRF_Project
 
                 MessageBox.Show(ex.Message);
             }
-            if (emailTextBox.Text=="manager@footballclub.com" && passwordTextBox.Text=="ClubManag3r")
+            if (emailTextBox.Text=="manager@footballclub.com" && passwordTextBox.Text=="a")
             {
                 TableUserControl tableUserControl = new TableUserControl(players, postList);
                 mainPanel.Controls.Add(tableUserControl);
                 tableUserControl.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                MessageBox.Show("Az e-mail cím vagy a jelszó nem megfelelő!");
             }
         }
 

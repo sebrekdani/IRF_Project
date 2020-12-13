@@ -39,11 +39,13 @@
             // 
             this.playerDataGridView.AllowUserToAddRows = false;
             this.playerDataGridView.AllowUserToDeleteRows = false;
+            this.playerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.playerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.playerDataGridView.Location = new System.Drawing.Point(3, 46);
+            this.playerDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.playerDataGridView.Location = new System.Drawing.Point(0, 57);
             this.playerDataGridView.Name = "playerDataGridView";
             this.playerDataGridView.ReadOnly = true;
-            this.playerDataGridView.Size = new System.Drawing.Size(506, 327);
+            this.playerDataGridView.Size = new System.Drawing.Size(1011, 358);
             this.playerDataGridView.TabIndex = 0;
             // 
             // exportButton
@@ -63,6 +65,7 @@
             this.postsComboBox.Name = "postsComboBox";
             this.postsComboBox.Size = new System.Drawing.Size(121, 21);
             this.postsComboBox.TabIndex = 2;
+            this.postsComboBox.SelectedValueChanged += new System.EventHandler(this.postsComboBox_SelectedValueChanged);
             // 
             // label1
             // 
@@ -82,7 +85,7 @@
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.playerDataGridView);
             this.Name = "TableUserControl";
-            this.Size = new System.Drawing.Size(509, 376);
+            this.Size = new System.Drawing.Size(1011, 415);
             ((System.ComponentModel.ISupportInitialize)(this.playerDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
