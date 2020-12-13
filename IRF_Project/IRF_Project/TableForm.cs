@@ -1,26 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
-namespace IRF_Project.UserControls
+namespace IRF_Project
 {
-    public partial class TableUserControl : UserControl
+    public partial class TableForm : Form
     {
         TeamEntities context = new TeamEntities();
         List<Player> playersToFilter = new List<Player>();
         string _choosenPost;
-        public TableUserControl(List<Player> players, List<string> postList)
+        Form1 _mainForm;
+        public TableForm(Form1 mainForm, List<Player> players, List<string> postList)
         {
             InitializeComponent();
             playersToFilter = players;
             FillComboBox(postList);
+            FillDataGridView(players);
+            _mainForm = mainForm;
+            CreateLogOutButton();
+        }
+
+        private void CreateLogOutButton()
+        {
+            CostumButton exportBT = new CostumButton("Export list", postsComboBox.Top, postsComboBox.Left + postsComboBox.Width + 50);
+            exportBT.Click += ExportBT_Click;
+            Controls.Add(exportBT);
+
+            CostumButton logOutBT = new CostumButton("Log Out", exportBT.Top, exportBT.Left + exportBT.Width + 50);
+            logOutBT.Click += LogOutBT_Click;
+            Controls.Add(logOutBT);
+        }
+
+        private void LogOutBT_Click(object sender, EventArgs e)
+        {
+            _mainForm.Enabled = true;
+            this.Close();
+        }
+
+        private void ExportBT_Click(object sender, EventArgs e)
+        {
+            List<Player> exportList = CreateNotInjuredList();
         }
 
         private void FillDataGridView(List<Player> players)
@@ -37,10 +62,6 @@ namespace IRF_Project.UserControls
             postsComboBox.DataSource = postDistinct.ToList();
         }
 
-        private void exportButton_Click(object sender, EventArgs e)
-        {
-            List<Player> exportList = CreateNotInjuredList();
-        }
 
         private List<Player> CreateNotInjuredList()
         {

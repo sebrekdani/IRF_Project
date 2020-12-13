@@ -1,5 +1,4 @@
-﻿using IRF_Project.UserControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +15,7 @@ namespace IRF_Project
         TeamEntities context = new TeamEntities();
         List<Player> players = new List<Player>();
         List<string> postList = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
@@ -54,9 +54,9 @@ namespace IRF_Project
             }
             if (emailTextBox.Text == "manager@footballclub.com" && passwordTextBox.Text == "a")
             {
-                TableUserControl tableUserControl = new TableUserControl(players, postList);
-                mainPanel.Controls.Add(tableUserControl);
-                tableUserControl.Dock = DockStyle.Fill;
+                TableForm tableForm = new TableForm(this, players, postList);
+                tableForm.Show();
+                this.Enabled = false;
             }
             else
             {
