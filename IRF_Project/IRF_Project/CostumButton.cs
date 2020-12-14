@@ -12,7 +12,7 @@ namespace IRF_Project
         public CostumButton(string text, int top, int left)
         {
             Width = 100;
-            Height = 30;
+            Height = 35;
             Top = top;
             Left = left;
             Text = text;

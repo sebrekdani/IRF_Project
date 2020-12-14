@@ -52,7 +52,7 @@ namespace IRF_Project
 
                 MessageBox.Show(ex.Message);
             }
-            if (emailTextBox.Text == "manager@footballclub.com" && passwordTextBox.Text == "a")
+            if (emailTextBox.Text == "manager@footballclub.com" && passwordTextBox.Text == "ClubManag3r")
             {
                 TableForm tableForm = new TableForm(this, players, postList);
                 tableForm.Show();
